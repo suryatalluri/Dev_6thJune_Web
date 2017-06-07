@@ -1,6 +1,6 @@
 var _WM_APP_PROPERTIES = {
   "activeTheme" : "material",
-  "dateFormat" : "",
+  "dateFormat" : "yyyy, dd MMMM",
   "defaultLanguage" : "en",
   "displayName" : "Dev 6thJune Web",
   "homePage" : "Main",

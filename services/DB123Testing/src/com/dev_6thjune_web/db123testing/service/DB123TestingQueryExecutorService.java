@@ -20,6 +20,8 @@ import com.dev_6thjune_web.db123testing.models.query.*;
 
 public interface DB123TestingQueryExecutorService {
 
+    Integer executeUpdate_query(UpdateQueryRequest updateQueryRequest);
+
     Page<Select1Response> executeSelect1(Pageable pageable);
 
     InputStream getBlobColContentForSelect1(Integer id) throws EntityNotFoundException;

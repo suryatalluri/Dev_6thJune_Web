@@ -205,5 +205,41 @@
         }
       } ]
     }
+  },
+  "update_query" : {
+    "name" : "update_query",
+    "description" : "update_query",
+    "version" : "V2",
+    "queryString" : "update Test_blob SET Name = :Name where Icon = :Icon",
+    "countQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ {
+      "name" : "Name",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "test",
+      "required" : true
+    }, {
+      "name" : "Icon",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : { },
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.dev_6thjune_web.db123testing.models.query.UpdateQueryRequest",
+      "method" : "PUT"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
   }
 }

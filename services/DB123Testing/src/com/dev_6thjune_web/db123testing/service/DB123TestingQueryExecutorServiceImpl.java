@@ -37,6 +37,17 @@ public class DB123TestingQueryExecutorServiceImpl implements DB123TestingQueryEx
     @Qualifier("DB123TestingWMQueryExecutor")
     private WMQueryExecutor queryExecutor;
 
+    @Transactional(value = "DB123TestingTransactionManager")
+    @Override
+    public Integer executeUpdate_query(UpdateQueryRequest updateQueryRequest) {
+        Map params = new HashMap(2);
+
+        params.put("Name", updateQueryRequest.getName());
+        params.put("Icon", updateQueryRequest.getIcon());
+
+        return queryExecutor.executeNamedQueryForUpdate("update_query", params);
+    }
+
     @Transactional(readOnly = true, value = "DB123TestingTransactionManager")
     @Override
     public Page<Select1Response> executeSelect1(Pageable pageable) {

@@ -2,6 +2,14 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+    <sql-query name="update_query">
+        <![CDATA[
+        update Test_blob SET Name = :Name where Icon = :Icon
+        ]]>
+    <query-param name="Name" type="java.lang.String"/>
+    <query-param name="Icon" type="byte[]"/>
+    </sql-query>
+
     <sql-query name="select1">
         <![CDATA[
         select * from AllTypes

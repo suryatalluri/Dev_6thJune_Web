@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,13 +23,17 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.wavemaker.commons.wrapper.IntegerWrapper;
 import com.wavemaker.runtime.data.dao.query.WMQueryExecutor;
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
 import com.wavemaker.runtime.data.export.ExportType;
@@ -52,6 +57,17 @@ public class QueryExecutionController {
 
     @Autowired
     private DB123TestingQueryExecutorService queryService;
+
+    @RequestMapping(value = "/queries/update_query", method = RequestMethod.PUT)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "update_query")
+    public IntegerWrapper executeUpdate_query(@Valid @RequestPart("wm_data_json") UpdateQueryRequest updateQueryRequest, @RequestPart(value = "Icon") MultipartFile icon, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: update_query");
+        updateQueryRequest.setIcon(WMMultipartUtils.toByteArray(icon));
+        Integer _result = queryService.executeUpdate_query(updateQueryRequest);
+        LOGGER.debug("got the result for named query: update_query, result:{}", _result);
+        return new IntegerWrapper(_result);
+    }
 
     @RequestMapping(value = "/queries/select1", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)

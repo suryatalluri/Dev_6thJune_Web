@@ -3,6 +3,10 @@
   "type" : "PARTIAL",
   "params" : [ ]
 }, {
+  "name" : "Issues_verify",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "Login",
   "type" : "PAGE",
   "params" : [ ]

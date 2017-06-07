@@ -1,0 +1,81 @@
+{
+  "Update_query" : {
+    "name" : "Update_query",
+    "description" : "Update_query",
+    "version" : "V2",
+    "queryString" : "update TABLE2 SET Name = :Name where Id = :Id",
+    "countQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ {
+      "name" : "Name",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "test1",
+      "required" : true
+    }, {
+      "name" : "Id",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.dev_6thjune_web.test_blob1.models.query.UpdateQueryRequest",
+      "method" : "PUT"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  },
+  "insert_query" : {
+    "name" : "insert_query",
+    "description" : "insert_query",
+    "version" : "V2",
+    "queryString" : "insert into Employee (ID, Name, City) values (:ID, :Name, :City)",
+    "countQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "INSERT",
+    "parameters" : [ {
+      "name" : "ID",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "4",
+      "required" : true
+    }, {
+      "name" : "Name",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "test",
+      "required" : true
+    }, {
+      "name" : "City",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "test",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.dev_6thjune_web.test_blob1.models.query.InsertQueryRequest",
+      "method" : "POST"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  }
+}

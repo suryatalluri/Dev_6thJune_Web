@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="Update_query">
+        <![CDATA[
+        update TABLE2 SET Name = :Name where Id = :Id
+        ]]>
+    <query-param name="Name" type="java.lang.String"/>
+    <query-param name="Id" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="insert_query">
+        <![CDATA[
+        insert into Employee (ID, Name, City) values (:ID, :Name, :City)
+        ]]>
+    <query-param name="ID" type="java.lang.Integer"/>
+    <query-param name="Name" type="java.lang.String"/>
+    <query-param name="City" type="java.lang.String"/>
+    </sql-query>
+</hibernate-mapping>

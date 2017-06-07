@@ -1,0 +1,123 @@
+<wm-page data-ng-controller="widgetsPageController" pagetitle="Widgets" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="8" name="page_content1">
+            <wm-tabs name="tabs1">
+                <wm-tabpane name="tabpane1">
+                    <wm-composite name="composite1">
+                        <wm-label class="col-md-3 control-label" name="label1"></wm-label>
+                        <wm-container class="col-md-9" name="container1">
+                            <wm-radioset height="auto" name="radioset1" dataset="bind:Variables.liveVariable1.dataSet" datafield="firstname" displayfield="firstname" selectedvalue="Eric"></wm-radioset>
+                        </wm-container>
+                    </wm-composite>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane2">
+                    <wm-livefilter title="Filter Table2" dataset="bind:Variables.Test_blob1Table2Data.dataSet" captionalign="left" captionposition="top" name="livefilter1">
+                        <wm-layoutgrid columns="1" name="layoutgrid1">
+                            <wm-gridrow name="gridrow1">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                                    <wm-filter-field name="id" field="id" displayname="Id" widget="number" is-range="false" type="integer" is-primary-key="true" generator="identity" show="true" inputtype="number" key="id" placeholder="Enter value"></wm-filter-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow2">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn2">
+                                    <wm-filter-field name="name" field="name" displayname="Name" widget="autocomplete" is-range="false" type="string" is-primary-key="false" generator="assigned" show="true" key="name" placeholder="Search" matchmode="start"></wm-filter-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow3">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                                    <wm-filter-field name="city" field="city" displayname="City" widget="text" is-range="false" type="string" is-primary-key="false" generator="assigned" show="true" inputtype="text" key="city" placeholder="Enter value" matchmode="start"></wm-filter-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                        <wm-filter-action key="filter" display-name="Filter" show="true" class="btn-primary" iconclass="wi wi-filter-list" title="Filter" action="filter()" disabled="false" type="button"></wm-filter-action>
+                        <wm-filter-action key="clear" display-name="Clear" show="true" class="btn-secondary" iconclass="wi wi-cancel" title="Clear" action="clearFilter()" disabled="false" type="button"></wm-filter-action>
+                    </wm-livefilter>
+                    <wm-livefilter title="Filter Employee" dataset="bind:Variables.liveVariable1.dataSet" captionalign="left" captionposition="top" name="livefilter2">
+                        <wm-layoutgrid columns="1" name="layoutgrid2">
+                            <wm-gridrow name="gridrow5">
+                                <wm-gridcolumn columnwidth="12" show="true" name="gridcolumn5">
+                                    <wm-filter-field name="empId" field="empId" displayname="Emp Id" widget="number" is-range="false" type="integer" is-primary-key="true" generator="identity" show="true" pc-display="true" mobile-display="true"></wm-filter-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow6">
+                                <wm-gridcolumn columnwidth="12" show="true" name="gridcolumn6">
+                                    <wm-filter-field name="department" field="department" displayname="Department" widget="number" lookup-type="Department" lookup-field="deptId" is-related="true" related-entity-name="Department" is-range="false" type="integer"
+                                    is-primary-key="false" generator="assigned" show="true" pc-display="true" mobile-display="true"></wm-filter-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow7">
+                                <wm-gridcolumn columnwidth="12" show="true" name="gridcolumn7">
+                                    <wm-filter-field name="employeeByManagerId" field="employeeByManagerId" displayname="Employee By Manager Id" widget="number" lookup-type="Employee" lookup-field="empId" is-related="true" related-entity-name="Employee" is-range="false"
+                                    type="integer" is-primary-key="false" generator="assigned" show="true" pc-display="true" mobile-display="true"></wm-filter-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow8">
+                                <wm-gridcolumn columnwidth="12" show="true" name="gridcolumn8">
+                                    <wm-filter-field name="firstname" field="firstname" displayname="Firstname" widget="autocomplete" is-range="false" type="string" is-primary-key="false" generator="assigned" show="true" pc-display="true" mobile-display="true"></wm-filter-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow9">
+                                <wm-gridcolumn columnwidth="12" show="true" name="gridcolumn9">
+                                    <wm-filter-field name="lastname" field="lastname" displayname="Lastname" widget="text" is-range="false" type="string" is-primary-key="false" generator="assigned" show="true" pc-display="true" mobile-display="true"></wm-filter-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                        <wm-filter-action key="filter" class="btn-primary" iconclass="wi wi-filter-list" action="filter()" display-name="Filter" show="true" type="button"></wm-filter-action>
+                        <wm-filter-action key="clear" class="btn-secondary" iconclass="wi wi-cancel" action="clearFilter()" display-name="Clear" show="true" type="button"></wm-filter-action>
+                    </wm-livefilter>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane3">
+                    <wm-liveform errormessage="" title="Table2 Info" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.Test_blob1Table2Data1.dataSet" captionalign="left" captionposition="top" name="liveform1">
+                        <wm-layoutgrid columns="1" name="layoutgrid3">
+                            <wm-gridrow name="gridrow10">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn10">
+                                    <wm-form-field name="name" displayname="Name" required="false" show="true" generator="assigned" primary-key="false" key="name" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true" widget="autocomplete"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow11">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn11">
+                                    <wm-form-field name="city" displayname="City" required="false" show="true" generator="assigned" primary-key="false" key="city" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true" widget="text"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow12">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                                    <wm-form-field name="icon" displayname="Icon" required="false" show="true" generator="assigned" primary-key="false" key="icon" type="blob" is-related="false" maxchars="-1" pc-display="true" mobile-display="true" widget="upload"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                        <wm-form-field name="id" displayname="Id" required="true" show="false" generator="identity" primary-key="true" key="id" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                        <wm-form-action key="reset" class="form-reset btn-secondary" iconclass="wi wi-refresh" action="reset()" display-name="Reset" show="true" type="button" update-mode="true"></wm-form-action>
+                        <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                    </wm-liveform>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane4">
+                    <wm-form errormessage="" captionposition="top" title="Form" enctype="application/x-www-form-urlencoded" method="put" dataset="bind:Variables.Test_blob1ExecuteUpdate_query.dataSet" captionalign="left" name="form1">
+                        <wm-layoutgrid columns="1" name="layoutgrid4">
+                            <wm-gridrow name="gridrow12_1">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn12_1">
+                                    <wm-form-field readonly="false" name="Name" displayname="Name" key="Name" type="string" show="true" widget="text"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow13">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn13">
+                                    <wm-form-field readonly="false" name="Id" displayname="Id" key="Id" type="integer" show="true" widget="number"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                        <wm-buttongroup horizontalalign="right" class="form-action col-md-12" name="buttongroup1">
+                            <wm-button caption="Reset" type="reset" class="btn-secondary" name="button1"></wm-button>
+                            <wm-button caption="Cancel" type="button" class="btn-warning" name="button2"></wm-button>
+                            <wm-button caption="Save" type="submit" class="btn-primary" name="button3"></wm-button>
+                        </wm-buttongroup>
+                    </wm-form>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane5"></wm-tabpane>
+            </wm-tabs>
+        </wm-page-content>
+        <wm-right-panel columnwidth="2" content="rightnav" name="right_panel1"></wm-right-panel>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

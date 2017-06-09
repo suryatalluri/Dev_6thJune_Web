@@ -1,0 +1,107 @@
+<wm-page data-ng-controller="test11PageController" pagetitle="Test 11" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="8" name="page_content1">
+            <wm-tabs name="tabs1">
+                <wm-tabpane name="tabpane1">
+                    <wm-grid editmode="inline" title="Alltypes List" dataset="bind:Variables.DB123TestingAllTypesData.dataSet" navigation="Classic" name="grid1" radioselect="false" filtermode="multicolumn" multiselect="true" enablecolumnselection="false"
+                    gridfirstrowselect="true" formposition="top" exportformat="EXCEL,CSV" showrecordcount="true">
+                        <wm-grid-column binding="id" caption="Id" type="integer" primary-key="true" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="byteCol" caption="Byte Col" type="byte" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="shortCol" caption="Short Col" type="short" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="intCol" caption="Int Col" type="integer" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="longCol" caption="Long Col" type="long" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="floatCol" caption="Float Col" type="double" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="doubleCol" caption="Double Col" type="big_decimal" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="bigintCol" caption="Bigint Col" type="big_integer" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="bigdecCol" caption="Bigdec Col" type="big_decimal" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="stringCol" caption="String Col" type="string" generator="assigned" edit-widget-type="text" defaultvalue="null" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="textCol" caption="Text Col" type="string" primary-key="false" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="clobCol" caption="Clob Col" type="string" primary-key="false" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="dateCol" caption="Date Col" type="date" primary-key="false" generator="assigned" edit-widget-type="date" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="datetimeCol" caption="Datetime Col" type="datetime" primary-key="false" generator="assigned" edit-widget-type="datetime" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="timeCol" caption="Time Col" type="time" primary-key="false" generator="assigned" edit-widget-type="time" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="timestampCol" caption="Timestamp Col" type="datetime" primary-key="false" generator="assigned" edit-widget-type="datetime" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="booleanCol" caption="Boolean Col" type="boolean" primary-key="false" generator="assigned" edit-widget-type="checkbox" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="blobCol" caption="Blob Col" type="blob" primary-key="false" generator="assigned" edit-widget-type="upload" searchable="false" show="true" filterwidget="text" readonly="false"><a ng-if="columnValue != null" class="col-md-9" target="_blank" data-ng-href="{{columnValue}}"><i class="wm-icon wm-icon24 wi wi-file"></i></a>
+                        </wm-grid-column>
+                        <wm-grid-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-grid-column>
+                        <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-grid-action>
+                        <wm-grid-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-grid-row-action>
+                        <wm-grid-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-grid-row-action>
+                    </wm-grid>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane2">
+                    <wm-grid editmode="inline" title="Alltypes List" dataset="bind:Variables.DB123TestingAllTypesData.dataSet" navigation="Classic" name="grid2" radioselect="false" filtermode="multicolumn" multiselect="true" gridfirstrowselect="true" formposition="top"
+                    exportformat="EXCEL,CSV">
+                        <wm-grid-column binding="id" caption="Id" type="integer" primary-key="true" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="byteCol" caption="Byte Col" type="byte" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="shortCol" caption="Short Col" type="short" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="intCol" caption="Int Col" type="integer" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="longCol" caption="Long Col" type="long" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="floatCol" caption="Float Col" type="double" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="doubleCol" caption="Double Col" type="big_decimal" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="bigintCol" caption="Bigint Col" type="big_integer" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="bigdecCol" caption="Bigdec Col" type="big_decimal" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="stringCol" caption="String Col" type="string" generator="assigned" edit-widget-type="text" defaultvalue="null" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="textCol" caption="Text Col" type="string" primary-key="false" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="clobCol" caption="Clob Col" type="string" primary-key="false" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="dateCol" caption="Date Col" type="date" primary-key="false" generator="assigned" edit-widget-type="date" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="datetimeCol" caption="Datetime Col" type="datetime" primary-key="false" generator="assigned" edit-widget-type="datetime" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="timeCol" caption="Time Col" type="time" primary-key="false" generator="assigned" edit-widget-type="time" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="timestampCol" caption="Timestamp Col" type="datetime" primary-key="false" generator="assigned" edit-widget-type="datetime" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="booleanCol" caption="Boolean Col" type="boolean" primary-key="false" generator="assigned" edit-widget-type="checkbox" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="blobCol" caption="Blob Col" type="blob" primary-key="false" generator="assigned" edit-widget-type="upload" searchable="false" show="true" filterwidget="text" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" sortable="false" searchable="false" show="true"></wm-grid-column>
+                        <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-grid-action>
+                        <wm-grid-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-grid-row-action>
+                        <wm-grid-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-grid-row-action>
+                    </wm-grid>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane3">
+                    <wm-grid editmode="inline" title="Alltypes List" dataset="bind:Variables.DB123TestingAllTypesData1.dataSet" navigation="Basic" name="grid3" filtermode="search" spacing="condensed" radioselect="false" multiselect="true">
+                        <wm-grid-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true" rowactionsposition="0"></wm-grid-column>
+                        <wm-grid-column binding="id" caption="Id" type="integer" primary-key="true" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="byteCol" caption="Byte Col" type="byte" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="shortCol" caption="Short Col" type="short" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="intCol" caption="Int Col" type="integer" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="longCol" caption="Long Col" type="long" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="floatCol" caption="Float Col" type="double" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="doubleCol" caption="Double Col" type="big_decimal" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="bigintCol" caption="Bigint Col" type="big_integer" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="bigdecCol" caption="Bigdec Col" type="big_decimal" generator="assigned" edit-widget-type="number" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-column binding="stringCol" caption="String Col" type="string" generator="assigned" edit-widget-type="text" defaultvalue="null" show="true" readonly="false" required="true"></wm-grid-column>
+                        <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false" position="header"></wm-grid-action>
+                        <wm-grid-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-grid-row-action>
+                        <wm-grid-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-grid-row-action>
+                    </wm-grid>
+                    <wm-grid title="" dataset="bind:Widgets.grid3.selecteditem" navigation="Classic" name="grid4" showrecordcount="true">
+                        <wm-grid-column binding="id" caption="Id" type="integer" primary-key="true" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="byteCol" caption="Byte Col" type="byte" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="shortCol" caption="Short Col" type="short" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="intCol" caption="Int Col" type="integer" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="longCol" caption="Long Col" type="long" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="floatCol" caption="Float Col" type="double" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="doubleCol" caption="Double Col" type="big_decimal" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="bigintCol" caption="Bigint Col" type="big_integer" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="bigdecCol" caption="Bigdec Col" type="big_decimal" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="stringCol" caption="String Col" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="textCol" caption="Text Col" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="clobCol" caption="Clob Col" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="dateCol" caption="Date Col" type="date" generator="assigned" edit-widget-type="date" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="datetimeCol" caption="Datetime Col" type="datetime" generator="assigned" edit-widget-type="datetime" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="timeCol" caption="Time Col" type="time" generator="assigned" edit-widget-type="time" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="timestampCol" caption="Timestamp Col" type="datetime" generator="assigned" edit-widget-type="datetime" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="booleanCol" caption="Boolean Col" type="boolean" generator="assigned" edit-widget-type="checkbox" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="blobCol" caption="Blob Col" type="blob" generator="assigned" edit-widget-type="upload" searchable="false" show="true" readonly="false"><a ng-if="columnValue != null" class="col-md-9" target="_blank" data-ng-href="{{columnValue}}"><i class="wm-icon wm-icon24 wi wi-file"></i></a>
+                        </wm-grid-column>
+                    </wm-grid>
+                </wm-tabpane>
+            </wm-tabs>
+        </wm-page-content>
+        <wm-right-panel columnwidth="2" content="rightnav" name="right_panel1"></wm-right-panel>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>
